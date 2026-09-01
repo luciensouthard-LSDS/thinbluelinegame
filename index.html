@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>The Thin Blue Line Football Game | September 25, 2026</title>
-<meta name="description" content="The Thin Blue Line Football Game — Bishop McDevitt Crusaders vs. Cumberland Valley Eagles. Honoring the fallen, supporting the families. Friday, September 25, 2026, Rocco Ortenzio Field, Harrisburg PA.">
+<meta name="description" content="The Thin Blue Line Football Game is back after years away. Bishop McDevitt Crusaders vs. Cumberland Valley Eagles, Friday, September 25, 2026, Rocco Ortenzio Field, Harrisburg PA. Free admission — donations welcomed now or at the door.">
 <style>
   :root{
     --navy:#05070d;
@@ -288,6 +288,36 @@
   footer .meta a{color:var(--blue);text-decoration:none;}
   footer .meta a:hover{text-decoration:underline;}
 
+  /* Back banner */
+  .back-banner{
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    gap:10px;
+    flex-wrap:wrap;
+    text-align:center;
+    background:var(--navy-2);
+    padding:14px 20px;
+    font-family:Arial,sans-serif;
+    font-size:14px;
+    color:var(--grey);
+  }
+  .back-banner .badge{
+    display:inline-block;
+    font-family:'Bebas Neue','Oswald',Arial,sans-serif;
+    letter-spacing:.08em;
+    font-size:13px;
+    background:var(--blue-deep);
+    color:var(--white);
+    padding:4px 10px;
+    border-radius:3px;
+  }
+
+  /* Story section */
+  .story{border-top:1px solid var(--line);}
+  .story p{margin:0 0 16px;}
+  .story p:last-child{margin-bottom:0;}
+
   @media (max-width:520px){
     .cta-bar{gap:10px;padding:10px 14px;}
     .cta-bar .event-name{display:none;}
@@ -299,8 +329,14 @@
 
   <!-- Sticky CTA bar -->
   <div class="cta-bar">
-    <span class="event-name">The Thin Blue Line Football Game &middot; Sept 25, 2026</span>
-    <a class="btn btn-gold" href="#" data-placeholder title="Placeholder — link not yet connected">Get Tickets / Donate</a>
+    <span class="event-name">The Thin Blue Line Football Game &middot; Sept 25, 2026 &middot; Free Admission</span>
+    <a class="btn btn-gold" href="#" data-placeholder title="Placeholder — link not yet connected">Donate Now</a>
+  </div>
+
+  <!-- Back banner -->
+  <div class="back-banner">
+    <span class="badge">It's Back</span>
+    <span>After several years away, the tradition returns — join us to honor our fallen officers and support their families.</span>
   </div>
 
   <!-- Hero: the flyer itself -->
@@ -314,6 +350,16 @@
     <div class="section-label">Why We Play</div>
     <blockquote>&ldquo;Honoring the fallen. Supporting the families. Never forgotten.&rdquo;</blockquote>
     <p style="margin:0 auto;">Join us as we honor the courage and sacrifice of our fallen law enforcement officers and first responders. Together, as a community, we will never forget. This is more than a game — it's a tribute, a tradition, and a chance to fill the stands and show our appreciation for those who protect and serve.</p>
+  </section>
+
+  <!-- The tradition returns -->
+  <section class="story">
+    <div class="section-label">Our Story</div>
+    <h2 class="section-title">The Tradition <span class="accent">Returns</span></h2>
+    <p>Sheriff Nick Chimienti Jr. is proud to announce the return of the Thin Blue Line Football Game, a tradition that honors the courage, sacrifice, and legacy of our fallen law enforcement officers.</p>
+    <p>After several years away, this special event is finally returning. The game was paused during a time when it was difficult to find schools willing to host it — but times have changed, and after numerous requests from the community, we are honored to once again host this incredible event.</p>
+    <p>The Thin Blue Line Football Game is much more than a rivalry on the field. It's an opportunity for our community and the law enforcement family to stand together in remembrance of the brave men and women who made the ultimate sacrifice in the line of duty.</p>
+    <p>Most importantly, it's a chance to honor and support the surviving families of our fallen officers and first responders — reminding them that their loved ones are never forgotten.</p>
   </section>
 
   <!-- Event details -->
@@ -338,6 +384,11 @@
         <div class="label">Presented By</div>
         <div class="value">Sheriff Nick Chimienti Jr.</div>
         <div class="sub">Dauphin County Sheriff's Office</div>
+      </div>
+      <div class="detail-card">
+        <div class="label">Admission</div>
+        <div class="value">Free</div>
+        <div class="sub">Donations welcomed now or at the door</div>
       </div>
     </div>
   </section>
@@ -379,12 +430,12 @@
   <!-- Final CTA -->
   <section class="final-cta">
     <div class="section-label">Fill The Stands</div>
-    <h2 class="section-title">Never Forgotten. <span class="accent">Always Honored.</span></h2>
-    <p style="margin:0 auto;">Let's show our appreciation for those who protect and serve — bring your family, wear your blue, and come support the community.</p>
+    <h2 class="section-title">Free To Attend. <span class="accent">Your Support Matters.</span></h2>
+    <p style="margin:0 auto;"> No ticket is required — just show up. If you'd like to support the surviving families of our fallen officers and first responders, donations are welcome online now or in person at the door.</p>
     <div class="final-cta-buttons">
       <a class="btn btn-gold" href="#" data-placeholder title="Placeholder — link not yet connected">
-        Get Tickets / Donate
-        <span class="placeholder-flag">Link coming soon</span>
+        Donate Now
+        <span class="placeholder-flag">Donation link coming soon</span>
       </a>
       <a class="btn btn-outline" href="#event-details" title="Jump to event details">Event Details</a>
     </div>
