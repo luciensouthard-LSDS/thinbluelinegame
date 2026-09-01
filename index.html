@@ -287,6 +287,14 @@
   }
   footer .meta a{color:var(--blue);text-decoration:none;}
   footer .meta a:hover{text-decoration:underline;}
+  footer .credit{
+    font-family:Arial,sans-serif;
+    font-size:11px;
+    color:#4a5468;
+    margin-top:18px;
+  }
+  footer .credit a{color:#5c6884;text-decoration:none;}
+  footer .credit a:hover{text-decoration:underline;color:var(--grey);}
 
   /* Back banner */
   .back-banner{
@@ -318,6 +326,45 @@
   .story p{margin:0 0 16px;}
   .story p:last-child{margin-bottom:0;}
 
+  /* Donate section */
+  .donate{border-top:1px solid var(--line);}
+  .donate-card{
+    background:var(--panel);
+    border:1px solid var(--gold);
+    border-radius:8px;
+    padding:26px 28px;
+    margin-top:28px;
+  }
+  .donate-row{
+    display:flex;
+    flex-wrap:wrap;
+    gap:6px 10px;
+    padding:10px 0;
+    border-bottom:1px solid var(--line);
+  }
+  .donate-row:last-of-type{border-bottom:none;}
+  .donate-row .label{
+    font-family:Arial,sans-serif;
+    font-size:12px;
+    letter-spacing:.1em;
+    text-transform:uppercase;
+    color:var(--blue);
+    font-weight:700;
+    flex:0 0 130px;
+  }
+  .donate-row .value{
+    font-family:Arial,sans-serif;
+    font-size:16px;
+    color:var(--white);
+    flex:1 1 220px;
+  }
+  .donate-note{
+    font-family:Arial,sans-serif;
+    font-size:13px;
+    color:var(--grey);
+    margin-top:16px;
+  }
+
   @media (max-width:520px){
     .cta-bar{gap:10px;padding:10px 14px;}
     .cta-bar .event-name{display:none;}
@@ -330,7 +377,7 @@
   <!-- Sticky CTA bar -->
   <div class="cta-bar">
     <span class="event-name">The Thin Blue Line Football Game &middot; Sept 25, 2026 &middot; Free Admission</span>
-    <a class="btn btn-gold" href="#" data-placeholder title="Placeholder — link not yet connected">Donate Now</a>
+    <a class="btn btn-gold" href="#donate">How To Donate</a>
   </div>
 
   <!-- Back banner -->
@@ -388,9 +435,31 @@
       <div class="detail-card">
         <div class="label">Admission</div>
         <div class="value">Free</div>
-        <div class="sub">Donations welcomed now or at the door</div>
+        <div class="sub"><a href="#donate" style="color:var(--gold-soft);">Donations welcomed</a> now or at the door</div>
       </div>
     </div>
+  </section>
+
+  <!-- How to donate -->
+  <section class="donate" id="donate">
+    <div class="section-label">Support The Mission</div>
+    <h2 class="section-title">How To <span class="accent">Donate</span></h2>
+    <p>Admission is free — if you'd like to support the families of our fallen officers and first responders, donations are welcomed by mail or in person at the event.</p>
+    <div class="donate-card">
+      <div class="donate-row">
+        <div class="label">Payable To</div>
+        <div class="value">Dauphin County Chiefs of Police Association</div>
+      </div>
+      <div class="donate-row">
+        <div class="label">Memo Line</div>
+        <div class="value">Thin Blue Line Game</div>
+      </div>
+      <div class="donate-row">
+        <div class="label">Mail To</div>
+        <div class="value">Swatara Township Police Department<br>599 Eisenhower Blvd<br>Harrisburg, PA 17111</div>
+      </div>
+    </div>
+    <p class="donate-note">Your generous donations will be used to honor our fallen law enforcement heroes. Donations are also accepted in person at the game.</p>
   </section>
 
   <!-- Matchup -->
@@ -420,7 +489,7 @@
         src="https://maps.google.com/maps?q=Rocco%20Ortenzio%20Field%20Bishop%20McDevitt%20High%20School%20Harrisburg%20PA&t=&z=14&ie=UTF8&iwloc=&output=embed"
         loading="lazy"
         referrerpolicy="no-referrer-when-downgrade"
-        title="Map to Rocco Ortenzio Field, Bishop McDevitt High School, Harrisburg PA"
+        title="Map to Rocco Ortenzio Field, Bishop McDevitt High School, Harrisburg, PA"
         allowfullscreen>
       </iframe>
     </div>
@@ -431,12 +500,9 @@
   <section class="final-cta">
     <div class="section-label">Fill The Stands</div>
     <h2 class="section-title">Free To Attend. <span class="accent">Your Support Matters.</span></h2>
-    <p style="margin:0 auto;"> No ticket is required — just show up. If you'd like to support the surviving families of our fallen officers and first responders, donations are welcome online now or in person at the door.</p>
+    <p style="margin:0 auto;">No ticket is required — just show up. If you'd like to support the surviving families of our fallen officers and first responders, donations are welcome by mail or in person at the door.</p>
     <div class="final-cta-buttons">
-      <a class="btn btn-gold" href="#" data-placeholder title="Placeholder — link not yet connected">
-        Donate Now
-        <span class="placeholder-flag">Donation link coming soon</span>
-      </a>
+      <a class="btn btn-gold" href="#donate">How To Donate</a>
       <a class="btn btn-outline" href="#event-details" title="Jump to event details">Event Details</a>
     </div>
   </section>
@@ -447,6 +513,7 @@
       The Thin Blue Line Football Game &middot; Presented by Sheriff Nick Chimienti Jr., Dauphin County Sheriff's Office<br>
       <a href="https://thinbluelinegame.org">thinbluelinegame.org</a> &middot; &copy; 2026
     </div>
+    <div class="credit">Site by <a href="https://www.lsdigitalsolutions.com" target="_blank" rel="noopener">LS Digital Solutions, LLC</a></div>
   </footer>
 
 </body>
