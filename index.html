@@ -287,6 +287,26 @@
   }
   footer .meta a{color:var(--blue);text-decoration:none;}
   footer .meta a:hover{text-decoration:underline;}
+  .social-links{
+    display:flex;
+    justify-content:center;
+    margin-bottom:16px;
+  }
+  .social-links a{
+    display:inline-flex;
+    align-items:center;
+    gap:8px;
+    font-family:Arial,sans-serif;
+    font-size:13px;
+    color:var(--grey);
+    text-decoration:none;
+    border:1px solid var(--line);
+    border-radius:20px;
+    padding:8px 16px;
+    transition:border-color .15s ease, color .15s ease;
+  }
+  .social-links a:hover{border-color:var(--blue);color:var(--white);}
+  .social-links svg{width:16px;height:16px;fill:currentColor;flex-shrink:0;}
   footer .credit{
     font-family:Arial,sans-serif;
     font-size:11px;
@@ -489,7 +509,7 @@
         src="https://maps.google.com/maps?q=Rocco%20Ortenzio%20Field%20Bishop%20McDevitt%20High%20School%20Harrisburg%20PA&t=&z=14&ie=UTF8&iwloc=&output=embed"
         loading="lazy"
         referrerpolicy="no-referrer-when-downgrade"
-        title="Map to Rocco Ortenzio Field, Bishop McDevitt High School, Harrisburg, PA"
+        title="Map to Rocco Ortenzio Field, Bishop McDevitt High School, Harrisburg PA"
         allowfullscreen>
       </iframe>
     </div>
@@ -500,7 +520,7 @@
   <section class="final-cta">
     <div class="section-label">Fill The Stands</div>
     <h2 class="section-title">Free To Attend. <span class="accent">Your Support Matters.</span></h2>
-    <p style="margin:0 auto;">No ticket is required — just show up. If you'd like to support the surviving families of our fallen officers and first responders, donations are welcome by mail or in person at the door.</p>
+    <p style="margin:0 auto;">There's no ticket required — just show up. If you'd like to support the surviving families of our fallen officers and first responders, donations are welcomed by mail or in person at the door.</p>
     <div class="final-cta-buttons">
       <a class="btn btn-gold" href="#donate">How To Donate</a>
       <a class="btn btn-outline" href="#event-details" title="Jump to event details">Event Details</a>
@@ -508,6 +528,12 @@
   </section>
 
   <footer>
+    <div class="social-links">
+      <a href="https://www.facebook.com/SheriffNickChimientiJr" target="_blank" rel="noopener">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M22 12.06C22 6.5 17.52 2 12 2S2 6.5 2 12.06c0 5.02 3.66 9.18 8.44 9.94v-7.03H7.9v-2.91h2.54V9.85c0-2.51 1.49-3.9 3.77-3.9 1.09 0 2.24.2 2.24.2v2.46h-1.26c-1.24 0-1.63.77-1.63 1.56v1.88h2.78l-.44 2.91h-2.34V22c4.78-.76 8.44-4.92 8.44-9.94Z"/></svg>
+        Follow on Facebook
+      </a>
+    </div>
     <div class="tagline"><span class="never">NEVER FORGOTTEN.</span> &nbsp; <span class="always">ALWAYS HONORED.</span></div>
     <div class="meta">
       The Thin Blue Line Football Game &middot; Presented by Sheriff Nick Chimienti Jr., Dauphin County Sheriff's Office<br>
