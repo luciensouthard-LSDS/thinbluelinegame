@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover">
+<title>Thin Blue Line — Light Tribute</title>
+<meta name="theme-color" content="#020a1f">
+<style>
+  html,body{
+    margin:0;
+    padding:0;
+    width:100%;
+    height:100%;
+    overflow:hidden;
+    background:#020a1f;
+    -webkit-user-select:none;
+    user-select:none;
+    -webkit-touch-callout:none;
+    touch-action:manipulation;
+  }
+  #glow{
+    position:fixed;
+    inset:0;
+    background:#020a1f;
+    animation:none;
+  }
+  #glow.running{
+    animation:breathe 5s ease-in-out infinite;
+  }
+  @keyframes breathe{
+    0%   { background-color:#020a1f; }
+    50%  { background-color:#1e6fff; }
+    100% { background-color:#020a1f; }
+  }
+
+  #overlay{
+    position:fixed;
+    inset:0;
+    display:flex;
+    flex-direction:column;
+    align-items:center;
+    justify-content:center;
+    gap:22px;
+    padding:32px;
+    background:rgba(2,10,31,.96);
+    text-align:center;
+    font-family:Arial,Helvetica,sans-serif;
+    color:#f4f6fb;
+    transition:opacity .5s ease;
+    z-index:10;
+  }
+  #overlay.hidden{
+    opacity:0;
+    pointer-events:none;
+  }
+  #overlay h1{
+    font-size:20px;
+    font-weight:700;
+    letter-spacing:.04em;
+    margin:0;
+    color:#e8c968;
+  }
+  #overlay p{
+    font-size:15px;
+    line-height:1.6;
+    color:#c3cade;
+    max-width:320px;
+    margin:0;
+  }
+  #beginBtn{
+    font-family:inherit;
+    font-size:18px;
+    font-weight:700;
+    letter-spacing:.05em;
+    padding:16px 40px;
+    border-radius:6px;
+    border:none;
+    background:linear-gradient(180deg,#e8c968,#d4af37);
+    color:#1a1204;
+    cursor:pointer;
+  }
+  #beginBtn:active{transform:translateY(1px);}
+  #hint{
+    font-size:12px;
+    color:#6b7690;
+    margin-top:4px;
+  }
+  #stopBtn{
+    position:fixed;
+    bottom:16px;
+    right:16px;
+    z-index:11;
+    background:rgba(0,0,0,.35);
+    color:rgba(255,255,255,.55);
+    border:1px solid rgba(255,255,255,.25);
+    border-radius:20px;
+    font-family:Arial,Helvetica,sans-serif;
+    font-size:12px;
+    padding:8px 14px;
+    opacity:0;
+    transition:opacity .4s ease;
+  }
+  #stopBtn.visible{opacity:1;}
+</style>
+</head>
+<body>
+
+  <div id="glow"></div>
+
+  <div id="overlay">
+    <h1>Thin Blue Line &mdash; Light Tribute</h1>
+    <p>Turn your screen brightness all the way up, then tap below. Hold your phone up during the tribute and leave the screen on.</p>
+    <button id="beginBtn">Begin</button>
+    <div id="hint">Tap "Stop" in the bottom corner any time to end.</div>
+  </div>
+
+  <button id="stopBtn">Stop</button>
+
+  <script>
+    var glow = document.getElementById('glow');
+    var overlay = document.getElementById('overlay');
+    var beginBtn = document.getElementById('beginBtn');
+    var stopBtn = document.getElementById('stopBtn');
+    var wakeLock = null;
+
+    async function requestWakeLock() {
+      try {
+        if ('wakeLock' in navigator) {
+          wakeLock = await navigator.wakeLock.request('screen');
+        }
+      } catch (err) {
+        // Wake Lock not available — page still works, screen may just dim on its own timeout.
+      }
+    }
+
+    document.addEventListener('visibilitychange', function () {
+      if (wakeLock !== null && document.visibilityState === 'visible' && glow.classList.contains('running')) {
+        requestWakeLock();
+      }
+    });
+
+    function start() {
+      overlay.classList.add('hidden');
+      glow.classList.add('running');
+      stopBtn.classList.add('visible');
+      requestWakeLock();
+      if (document.documentElement.requestFullscreen) {
+        document.documentElement.requestFullscreen().catch(function () {});
+      }
+    }
+
+    function stop() {
+      glow.classList.remove('running');
+      overlay.classList.remove('hidden');
+      stopBtn.classList.remove('visible');
+      if (wakeLock) {
+        wakeLock.release().catch(function () {});
+        wakeLock = null;
+      }
+      if (document.exitFullscreen && document.fullscreenElement) {
+        document.exitFullscreen().catch(function () {});
+      }
+    }
+
+    beginBtn.addEventListener('click', start);
+    stopBtn.addEventListener('click', stop);
+  </script>
+
+</body>
+</html>
